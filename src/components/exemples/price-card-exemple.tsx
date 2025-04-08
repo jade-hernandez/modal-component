@@ -1,8 +1,8 @@
 import { basicFeatures, premiumFeatures, standardFeatures } from "data/feature-data";
 import { useState } from "react";
-import { Button } from "./ui/button";
-import { IPriceCardProps, PriceCard } from "./ui/price-card";
-import { TBillingCycle } from "./ui/pricing";
+import { Button } from "../ui/button";
+import { IPriceCardProps, PriceCard } from "../ui/price-card";
+import { TBillingCycle } from "../ui/pricing";
 
 type TPricingPlans = Omit<IPriceCardProps, "billingCycle">[];
 
