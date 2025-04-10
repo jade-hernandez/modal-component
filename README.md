@@ -1,4 +1,4 @@
-# Starter project
+# Starter project for a UI component library
 
 ## UI Component Library
 
