@@ -10,7 +10,7 @@ export default function HelloWorld() {
   return (
     <div className="space-y-8">
       <section>
-        <h2 className="text-2xl font-semibold mb-4">Pricing Cards</h2>
+        <h2 className="text-2xl font-semibold mb-4">Pricing Cards Component</h2>
         <PriceCardExample />
       </section>
 
