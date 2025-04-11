@@ -15,7 +15,7 @@ The purpose of this Portal component is to provide a way to render content outsi
 
 ### React Portal API
 
-Your component leverages React's `createPortal` API, which allows rendering children into a DOM node that exists outside the hierarchy of the parent component:
+The component leverages React's `createPortal` API, which allows rendering children into a DOM node that exists outside the hierarchy of the parent component:
 
 ```typescript
 return createPortal(children, portalRoot);
@@ -25,7 +25,7 @@ This is the core functionality that makes the Portal work - it takes the childre
 
 ### Dynamic Container Creation
 
-One of the smart features of your Portal implementation is its ability to dynamically create its container if it doesn't exist:
+One of the smart features of the Portal implementation is its ability to dynamically create its container if it doesn't exist:
 
 ```typescript
 if (createElement) {
@@ -47,7 +47,7 @@ This means:
 
 ### Cleanup on Unmount
 
-Your component properly cleans up after itself when unmounted:
+The component properly cleans up after itself when unmounted:
 
 ```typescript
 return () => {
@@ -130,9 +130,9 @@ if (!portalRoot) return null;
 
 If for some reason the portal container can't be found (which shouldn't happen with the default behavior), it gracefully renders nothing instead of crashing.
 
-## How It Fits in Your Component Library
+## How It Fits in the Component Library
 
-This Portal component is a foundational utility that powers higher-level components in your library:
+This Portal component is a foundational utility that powers higher-level components in the library:
 
 1. **Modal Component**: Uses the Portal to render dialogs at the root level
 2. **Tooltip Component**: Could use Portal to ensure tooltips aren't clipped by parent containers
