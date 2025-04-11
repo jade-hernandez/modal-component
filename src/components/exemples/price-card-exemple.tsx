@@ -42,6 +42,13 @@ export const PriceCardExample = () => {
 
   return (
     <div className="flex flex-col items-center gap-8">
+      <div className="text-center flex flex-col gap-5">
+        <p className="text-indigo-700 font-semibold text-base">Pricing Tiers</p>
+        <h2 className="font-semibold text-3xl">Fit for all your needs</h2>
+        <p className="text-neutral-600 text-xl">
+          Pick the plan that suits you today and step up as your demands grow - our flexible options have your journey mapped out.
+        </p>
+      </div>
       <div
         className="flex justify-center items-center rounded"
       >
