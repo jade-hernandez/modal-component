@@ -246,8 +246,6 @@ export const PriceCard = ({
 ```
 
 - Returns a card container with:
-  - Fixed maximum width (384px)
-  - Rounded corners, border, and subtle shadow
   - Conditional colored border if the card is featured
 
 ```typescript
@@ -261,23 +259,6 @@ export const PriceCard = ({
 - Conditionally renders a banner at the top if:
   - The card is marked as featured
   - A heading text is provided
-- The banner has rounded top corners, indigo background, and indigo text
-
-```typescript
-      <div className='flex h-full flex-col justify-center space-y-8 p-8'>
-        <div className='flex h-full flex-col space-y-8'>
-```
-
-- Creates nested flex containers with consistent vertical spacing
-
-```typescript
-          <div className='flex flex-col space-y-2'>
-            <h2 className='text-2xl font-semibold'>{title}</h2>
-            <p className='text-neutral-600'>{description}</p>
-          </div>
-```
-
-- Renders the plan title and description with appropriate styling
 
 ```typescript
           <Pricing
@@ -307,9 +288,7 @@ export const PriceCard = ({
 ```
 
 - Adds a call-to-action button at the bottom of the card
-- The button spans the full width of the card
 - Uses the specified variant and a large size
-- Has auto margin at the top to push it to the bottom of the card
 
 ### Key Features Price Card
 
@@ -396,28 +375,6 @@ const toggleBillingCycle = () => {
 - Uses the functional form of setState to safely reference the previous state
 
 ```typescript
-  return (
-    <div className="flex flex-col items-center gap-8">
-```
-
-- Returns a flex container that centers content with consistent vertical spacing
-
-```typescript
-      <div className="text-center flex flex-col gap-5">
-        <p className="text-indigo-700 font-semibold text-base">Pricing Tiers</p>
-        <h2 className="font-semibold text-3xl">Fit for all your needs</h2>
-        <p className="text-neutral-600 text-xl">
-          Pick the plan that suits you today and step up as your demands grow - our flexible options have your journey mapped out.
-        </p>
-      </div>
-```
-
-- Marketing section with:
-  - A small purple "Pricing Tiers" label
-  - A large headline
-  - A supporting paragraph explaining the value proposition
-
-```typescript
       <div
         className="flex justify-center items-center rounded"
       >
@@ -441,7 +398,6 @@ const toggleBillingCycle = () => {
 - Creates a toggle for switching between monthly and annual billing
 - Uses two buttons side by side
 - The active option appears as a secondary button (filled)
-- The inactive option appears as a link
 - Both buttons have minimum width to maintain consistency
 - Both buttons call the same toggle function
 
@@ -489,14 +445,6 @@ const toggleBillingCycle = () => {
    - Takes pricing values and billing cycle information
    - Formats and displays the appropriate price based on the current billing cycle
 
-## Design Patterns Used
-
-1. **Composition**: Building complex UIs from simpler components.
-2. **Prop Drilling**: Passing data down through the component hierarchy.
-3. **State Lifting**: Maintaining state at a higher level (billing cycle) and passing it down.
-4. **Type Safety**: Using TypeScript interfaces and types to ensure proper data structures.
-5. **Variant Pattern**: Using class-variance-authority for styling variants.
-
 ## Benefits of This Approach
 
 1. **Modularity**: Each component has a single responsibility, making the code easier to maintain.
@@ -504,5 +452,4 @@ const toggleBillingCycle = () => {
 3. **Consistency**: Styling and behavior are consistent across pricing cards.
 4. **Flexibility**: The system can easily accommodate different pricing structures, features, and styling variations.
 5. **Type Safety**: TypeScript ensures proper data structure throughout the component hierarchy.
-
-This architecture allows for easy extension, such as adding new pricing tiers or features, while maintaining a consistent UI structure and behavior.
+6. **User Experience**: The toggle feature enhances user experience by allowing easy switching between billing cycles.
