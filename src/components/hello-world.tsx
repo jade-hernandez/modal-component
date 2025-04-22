@@ -1,5 +1,6 @@
 "use client";
 
+import { FooterExample } from "./exemples/footer-exemple";
 import { ModalExample } from "./exemples/modal-exemple";
 import { ModalUsageExample } from "./exemples/modal-usage-exemple";
 import { PriceCardExample } from "./exemples/price-card-exemple";
@@ -30,6 +31,10 @@ export default function HelloWorld() {
         <h2 className="text-2xl font-semibold ">UI Library Modal Component</h2>
         <p className="text-base">This modal shows how to use the reusable Modal component from the UI library </p>
         <ModalUsageExample />
+      </section>
+      <section>
+        <h2 className="text-2xl font-semibold ">Footer Component</h2>
+        <FooterExample />
       </section>
     </div>
   );
