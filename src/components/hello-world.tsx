@@ -1,6 +1,6 @@
 "use client";
 
-import { FooterExample } from "./exemples/footer-exemple";
+import FooterExample from "./exemples/footer-exemple";
 import { ModalExample } from "./exemples/modal-exemple";
 import { ModalUsageExample } from "./exemples/modal-usage-exemple";
 import { PriceCardExample } from "./exemples/price-card-exemple";

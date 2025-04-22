@@ -1,78 +1,23 @@
+"use client";
+
 import { cn } from "@/lib/utils";
-import { sectionsData } from "../../data/footer-data";
+import Link from "next/link";
 import { HTMLAttributes, forwardRef } from "react";
-import FacebookIcon from "@/components/icons/facebook-icon";
-import GithubIcon from "../icons/github-icon";
-import InstagramIcon from "../icons/instagram-icon";
-import XIcon from "../icons/x-icon";
-import YoutubeIcon from "../icons/youtube-icon";
+import { IconButton } from "./icon-button"; // Adjusted the path to locate the module correctly
 
-// Default icons configuration
-const ICON_SIZE = 24;
-const ICON_COLOR = "#A3A3A3";
-const defaultIcons = [
-  {
-    id: "youtube",
-    icon: <YoutubeIcon size={ICON_SIZE} color={ICON_COLOR} />,
-    label: "Visit Youtube profile",
-  },
-  {
-    id: "instagram",
-    icon: <InstagramIcon size={ICON_SIZE} color={ICON_COLOR} />,
-    label: "Visit Instagram profile",
-  },
-  {
-    id: "facebook",
-    icon: <FacebookIcon size={ICON_SIZE} color={ICON_COLOR} />,
-    label: "Visit facebook profile",
-  },
-  {
-    id: "github",
-    icon: <GithubIcon size={ICON_SIZE} color={ICON_COLOR} />,
-    label: "Visit github profile",
-  },
-  {
-    id: "x",
-    icon: <XIcon size={ICON_SIZE} color={ICON_COLOR} />,
-    label: "Visit X profile",
-  }
-];
-
-// IconButton component
-const IconButton: React.FC<{
-  children: React.ReactNode;
-  label: string;
-  onClick?: () => void;
-}> = ({
-  children,
-  label,
-  onClick,
-}) => {
-    return (
-      <button
-        className="p-2"
-        aria-label={label}
-        onClick={onClick}
-      >
-        {children}
-      </button>
-    );
-  };
-
-// Props interface for the Footer component
 export interface FooterProps extends HTMLAttributes<HTMLElement> {
-  companyName?: string;
-  navItems?: Array<{
+  navItems: Array<{
     id: number | string;
     title: string;
     path: string;
   }>;
-  socialIcons?: Array<{
+  socialIcons: Array<{
     id: string;
     icon: React.ReactElement;
     label: string;
     onClick?: () => void;
   }>;
+  companyName?: string;
   showSocialIcons?: boolean;
   showCopyright?: boolean;
   initialYear?: number;
@@ -80,9 +25,9 @@ export interface FooterProps extends HTMLAttributes<HTMLElement> {
 
 const Footer = forwardRef<HTMLElement, FooterProps>(
   ({
-    companyName = "Abstractly, Inc.",
-    navItems = sectionsData,
-    socialIcons = defaultIcons,
+    navItems,
+    socialIcons,
+    companyName,
     showSocialIcons = true,
     showCopyright = true,
     initialYear,
@@ -97,31 +42,30 @@ const Footer = forwardRef<HTMLElement, FooterProps>(
     return (
       <footer
         ref={ref}
-        className={cn("flex flex-col items-center py-[286px] gap-4", className)}
+        className={cn("flex flex-col items-center justify-center gap-4", className)}
         {...props}
       >
         {navItems && navItems.length > 0 && (
           <div className="flex flex-wrap gap-4 justify-center items-center">
             {navItems.map(({ path, id, title }) => (
-              <a
+              <Link
                 key={id}
                 href={path}
                 className="text-neutral-600 text-sm p-[2px]"
               >
                 {title}
-              </a>
+              </Link>
             ))}
           </div>
         )}
 
         <div className="flex flex-col justify-center items-center gap-4">
           {showSocialIcons && socialIcons && socialIcons.length > 0 && (
-            <div className="flex gap-6 justify-center items-center">
+            <div className="flex gap-6 justify-center items-center flex-wrap">
               {socialIcons.map((icon) => (
                 <IconButton
                   key={icon.id}
                   label={icon.label}
-                // onClick={icon.onClick}
                 >
                   {icon.icon}
                 </IconButton>
