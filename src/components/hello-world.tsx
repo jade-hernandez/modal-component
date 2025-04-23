@@ -1,10 +1,10 @@
 "use client";
 
-import FooterExample from "./exemples/footer-exemple";
-import { ModalExample } from "./exemples/modal-exemple";
-import { ModalUsageExample } from "./exemples/modal-usage-exemple";
-import { PriceCardExample } from "./exemples/price-card-exemple";
-import { TooltipExample } from "./exemples/tooltip-exemple";
+import FooterExample from "./exemples/footer-example";
+import { ModalExample } from "./exemples/modal-example";
+import { ModalUsageExample } from "./exemples/modal-usage-example";
+import { PriceCardExample } from "./exemples/price-card-example";
+import { TooltipExample } from "./exemples/tooltip-example";
 
 
 
