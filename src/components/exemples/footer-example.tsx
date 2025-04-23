@@ -4,7 +4,7 @@ import { defaultIcons, sectionsData } from "data/footer-data";
 import { useMemo } from "react";
 import { Footer } from "../ui/footer";
 
-export default function FooterExemple() {
+export default function FooterExample() {
   const memoizedDefaultIcons = useMemo(() => defaultIcons.map((icon) => ({
     ...icon,
   })), []);
