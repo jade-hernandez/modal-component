@@ -23,7 +23,7 @@ export const modalVariants = cva(
       },
       position: {
         center: "p-6",
-        bottom: "p-6 rounded-b-none fixed bottom-0 left-[50%] transform -translate-x-1/2"
+        // bottom: "p-6 rounded-b-none fixed bottom-0 left-[50%] transform -translate-x-1/2"
       }
     },
     defaultVariants: {
@@ -82,7 +82,7 @@ export function Modal({
   return (
     <Portal>
       <div
-        className='fixed inset-0 z-50 flex items-end justify-center p-4 sm:items-center'
+        className='fixed inset-0 z-50 flex items-center justify-center p-4 sm:items-center'
         role='dialog'
         aria-modal='true'
         aria-labelledby={title ? "modal-title" : undefined}
