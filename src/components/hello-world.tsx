@@ -14,15 +14,13 @@ export default function HelloWorld() {
   };
 
   const handleYes = () => {
+    // Toggle between primary and danger variants when Yes is clicked
     if (modalVariant === "primary") {
-      // First Yes click - switch to danger variant
-      console.log("First confirmation - switching to danger variant");
+      console.log("Switching to danger variant");
       setModalVariant("danger");
     } else {
-      // Second Yes click - perform actual action
-      console.log("Final confirmation - User confirmed action");
-      // Perform your action here
-      handleClose(); // Close after confirmation
+      console.log("Switching to primary variant");
+      setModalVariant("primary");
     }
   };
 
