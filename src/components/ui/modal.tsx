@@ -4,10 +4,10 @@ import { useEffect, useRef } from "react";
 import { useFocusTrap } from "@/hooks/use-focus-trap";
 import { cn } from "@/lib/utils";
 
-import { Portal } from "../portal";
+import { Portal } from "./portal";
 
+import { IModalProps } from "../../data/modal.types";
 import { ModalCloseButton } from "./modal-close-button";
-import { IModalProps } from "./modal.types";
 
 export const modalVariants = cva(
   "relative w-full transform rounded-lg bg-white shadow-xl transition-all",
