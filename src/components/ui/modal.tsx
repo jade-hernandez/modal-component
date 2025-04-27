@@ -90,7 +90,7 @@ export function Modal({
         {/* Overlay */}
         <div
           className={cn(
-            "fixed inset-0 bg-black/50 backdrop-blur-sm transition-opacity",
+            "fixed inset-0 bg-[#0A0A0A]/70 backdrop-blur-sm transition-opacity",
             overlayClassName
           )}
           aria-hidden='true'
