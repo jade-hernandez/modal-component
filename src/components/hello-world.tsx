@@ -14,13 +14,15 @@ export default function HelloWorld() {
   };
 
   const handleYes = () => {
-    // Toggle between primary and danger variants when Yes is clicked
     if (modalVariant === "primary") {
-      console.log("Switching to danger variant");
+      // First Yes click - switch to danger variant
+      console.log("First confirmation - switching to danger variant");
       setModalVariant("danger");
     } else {
-      console.log("Switching to primary variant");
-      setModalVariant("primary");
+      // Second Yes click - perform actual action
+      console.log("Final confirmation - User confirmed action");
+      // Perform your action here
+      handleClose(); // Close after confirmation
     }
   };
 
@@ -30,7 +32,7 @@ export default function HelloWorld() {
   };
 
   return (
-    <div className="flex flex-col items-center gap-4">
+    <div className="flex flex-col items-center">
       <Modal
         isOpen={isModalOpen}
         onClose={handleClose}
@@ -40,7 +42,7 @@ export default function HelloWorld() {
         title="Are you sure you want to leave the process?"
         description="Your upgrade plan process will be cancelled. You need to start again if you leave the process."
       >
-        <div className="flex gap-3">
+        <div className="flex gap-3 mt-8">
           <Button
             onClick={handleNo}
             textContent="No"
@@ -49,7 +51,7 @@ export default function HelloWorld() {
           />
           <Button
             onClick={handleYes}
-            textContent="Yes"
+            textContent={modalVariant === "primary" ? "Yes" : "Delete"}
             variant={modalVariant === "danger" ? "destructive" : "primary"}
             size="lg"
           />

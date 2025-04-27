@@ -10,7 +10,7 @@ export function ModalCloseButton({ className, ...props }: ICloseButtonProps) {
   return (
     <button
       className={cn(
-        "absolute right-4 top-4 rounded p-1 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-neutral-900",
+        "absolute rounded p-1 text-gray-600 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-neutral-900 ",
         className
       )}
       aria-label='Close modal'

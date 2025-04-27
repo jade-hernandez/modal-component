@@ -103,15 +103,22 @@ export function Modal({
           ref={modalRef}
           className={cn(modalVariants({ size, position }), className)}
         >
-          {showCloseButton && <ModalCloseButton onClick={onClose} />}
-
-          {title && (
-            <h2
-              id='modal-title'
-              className='text-lg font-semibold text-gray-900'
-            >
-              {title}
-            </h2>
+          {(title || showCloseButton) && (
+            <div className="flex items-start ">
+              {title && (
+                <h2
+                  id='modal-title'
+                  className='text-lg font-semibold text-gray-900 '
+                >
+                  {title}
+                </h2>
+              )}
+              {showCloseButton && (
+                <div className="flex-shrink-0">
+                  <ModalCloseButton onClick={onClose} className="static" />
+                </div>
+              )}
+            </div>
           )}
 
           {description && (
@@ -129,3 +136,4 @@ export function Modal({
     </Portal>
   );
 }
+
