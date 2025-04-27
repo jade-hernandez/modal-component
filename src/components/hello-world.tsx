@@ -21,7 +21,6 @@ export default function HelloWorld() {
     } else {
       // Second Yes click - perform actual action
       console.log("Final confirmation - User confirmed action");
-      // Perform your action here
       handleClose(); // Close after confirmation
     }
   };
@@ -37,10 +36,10 @@ export default function HelloWorld() {
         isOpen={isModalOpen}
         onClose={handleClose}
         showCloseButton={true}
-        size="sm"
         position="center"
         title="Are you sure you want to leave the process?"
         description="Your upgrade plan process will be cancelled. You need to start again if you leave the process."
+        classNames="max-w-[343px]"
       >
         <div className="flex gap-3 mt-8">
           <Button

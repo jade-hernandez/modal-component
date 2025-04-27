@@ -14,12 +14,12 @@ export const modalVariants = cva(
   {
     variants: {
       size: {
-        sm: "max-w-sm",
-        md: "max-w-md",
-        lg: "max-w-lg",
-        xl: "max-w-xl",
-        "2xl": "max-w-2xl",
-        full: "max-w-full"
+        // sm: "max-w-sm",
+        // md: "max-w-md",
+        // lg: "max-w-lg",
+        // xl: "max-w-xl",
+        // "2xl": "max-w-2xl",
+        // full: "max-w-full"
       },
       position: {
         center: "p-6",
@@ -27,7 +27,6 @@ export const modalVariants = cva(
       }
     },
     defaultVariants: {
-      size: "md",
       position: "center"
     }
   }
@@ -45,7 +44,7 @@ export function Modal({
   closeOnOverlayClick = true,
   closeOnEsc = true,
   preventScroll = true,
-  className,
+  classNames,
   overlayClassName
 }: IModalProps) {
   const modalRef = useRef<HTMLDivElement>(null);
@@ -101,7 +100,7 @@ export function Modal({
         {/* Modal panel */}
         <div
           ref={modalRef}
-          className={cn(modalVariants({ size, position }), className)}
+          className={cn(modalVariants({ size, position }), classNames)}
         >
           {(title || showCloseButton) && (
             <div className="flex items-start ">

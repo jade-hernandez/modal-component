@@ -13,6 +13,6 @@ export interface IModalProps extends VariantProps<typeof modalVariants> {
   closeOnOverlayClick?: boolean;
   closeOnEsc?: boolean;
   preventScroll?: boolean;
-  className?: string;
+  classNames?: string;
   overlayClassName?: string;
 }
